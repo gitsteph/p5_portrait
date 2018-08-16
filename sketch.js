@@ -1,10 +1,11 @@
 var img;
 
-function setup() {
+
+function preload() {
     img = loadImage("test.jpg");
 }
 
-function draw() {
+function setup() {
     var canvas = createCanvas(windowWidth, windowHeight);
     img.resize(0, windowHeight);
     img.loadPixels();
@@ -21,4 +22,8 @@ function draw() {
             }
         }
     }
+}
+
+function draw() {
+    
 }
