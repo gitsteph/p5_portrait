@@ -4,7 +4,7 @@ var manager;
 
 
 function preload() {
-    img = loadImage("test.jpg");
+    img = loadImage("baseImage0.jpg");
 }
 
 function setup() {
