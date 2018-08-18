@@ -24,7 +24,7 @@ function setup() {
     img.resize(0, windowHeight - 100);
     img.loadPixels();
     if (img.pixels.length > 0) {
-        var pixelValueWidth = pixelDensity() * img.width * 4;
+        var pixelValueWidth = img.width * 4;
         for (var imgHeightIndex = 0; imgHeightIndex < img.height; imgHeightIndex += 16) {
             for (var pixelValueWidthIndex = 0; pixelValueWidthIndex < pixelValueWidth; pixelValueWidthIndex += 64) {
                 var x = pixelValueWidthIndex / 4;
