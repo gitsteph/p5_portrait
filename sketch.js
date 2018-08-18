@@ -21,16 +21,16 @@ function setup() {
     matter.zeroGravity();
     manager = new Array();
 
-    img.resize(0, windowHeight - 100);
+    img.resize(0, Math.min(960, windowHeight - 100));
     img.loadPixels();
     if (img.pixels.length > 0) {
         var pixelValueWidth = img.width * 4;
-        for (var imgHeightIndex = 0; imgHeightIndex < img.height; imgHeightIndex += 16) {
-            for (var pixelValueWidthIndex = 0; pixelValueWidthIndex < pixelValueWidth; pixelValueWidthIndex += 64) {
-                var x = pixelValueWidthIndex / 4;
-                var y = imgHeightIndex;
+        for (var imgHeightIndex = 0; imgHeightIndex < img.height; imgHeightIndex += 32) {
+            for (var pixelValueWidthIndex = 0; pixelValueWidthIndex < pixelValueWidth; pixelValueWidthIndex += 128) {
+                var x = pixelValueWidthIndex / 4 + 20;
+                var y = imgHeightIndex + 20;
                 var pixelValueBase = pixelValueWidth * imgHeightIndex + pixelValueWidthIndex;
-                var size = 15;  // 15 default,
+                var size = 30;  // 30 default,
                 var matterBall = matter.makeBall(x, y, size);
                 var ellipseProperties = {
                     "r": img.pixels[pixelValueBase],
@@ -60,8 +60,8 @@ function draw() {
     stroke(253 - 50, 95 - 50, 0 - 50);
     textSize(60);
     fill(253, 95, 0, 100);
-    text("self-portrait", 10, windowHeight - 50);
+    text("self-portrait", 10, img.height + 50);
     textSize(30);
     fill(255, 0, 153, 100);
-    text("(play w/me!)", 10, windowHeight - 20);
+    text("(play w/me!)", 10, img.height + 75);
 }
